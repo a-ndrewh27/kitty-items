@@ -1,3 +1,5 @@
+const appTitle = "Kitty Items"
+
 const isDev = process.env.NODE_ENV === "development"
 
 const chainEnv = process.env.NEXT_PUBLIC_CHAIN_ENV
@@ -34,10 +36,8 @@ const contractNonFungibleToken =
 if (!contractNonFungibleToken)
   throw "Missing NEXT_PUBLIC_CONTRACT_NON_FUNGIBLE_TOKEN"
 
-const contractMetadataViews =
-  process.env.NEXT_PUBLIC_CONTRACT_METADATA_VIEWS
-if (!contractMetadataViews)
-  throw "Missing NEXT_PUBLIC_CONTRACT_METADATA_VIEWS"
+const contractMetadataViews = process.env.NEXT_PUBLIC_CONTRACT_METADATA_VIEWS
+if (!contractMetadataViews) throw "Missing NEXT_PUBLIC_CONTRACT_METADATA_VIEWS"
 
 const flowAddress = process.env.NEXT_PUBLIC_FLOW_ADDRESS
 if (!flowAddress) throw "Missing NEXT_PUBLIC_FLOW_ADDRESS"
@@ -55,6 +55,7 @@ const contractFlowToken = process.env.NEXT_PUBLIC_CONTRACT_FLOW_TOKEN
 if (!contractFlowToken) throw "Missing NEXT_PUBLIC_CONTRACT_FLOW_TOKEN"
 
 const publicConfig = {
+  appTitle,
   isDev,
   faucetAddress: process.env.NEXT_PUBLIC_FAUCET_ADDRESS,
   chainEnv,

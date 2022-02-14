@@ -15,12 +15,13 @@ export default function ListItemPageButtons({item}) {
   const {currentUser} = useAppContext()
   const {data: flowBalance} = useFLOWBalance(currentUser?.addr)
 
-  const [{isLoading: isBuyLoading}, buy, buyTxStatus] = useItemPurchase()
+  const [{isLoading: isBuyLoading}, purchase, buyTxStatus] = useItemPurchase()
   const [{isLoading: isRemoveLoading}, remove, removeTxStatus] =
     useItemRemoval()
 
-  const onPurchaseClick = () => buy(item.listingResourceID, id, address)
-  const onRemoveClick = () => remove(item.listingResourceID, id)
+  const onPurchaseClick = () =>
+    purchase(item.listingResourceID, id, item.name, address)
+  const onRemoveClick = () => remove(item)
 
   const hasListing = Number.isInteger(item.listingResourceID)
   const currentUserIsOwner = currentUser && item.owner === currentUser?.addr

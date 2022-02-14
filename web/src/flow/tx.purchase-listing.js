@@ -1,6 +1,6 @@
 import {invariant} from "@onflow/util-invariant"
-import {tx} from "src/flow/util/tx"
 import PURCHASE_LISTING_TRANSACTION from "cadence/transactions/purchase_listing.cdc"
+import {tx} from "src/flow/util/tx"
 
 // prettier-ignore
 export function purchaseListing({itemID, ownerAddress}, opts = {}) {

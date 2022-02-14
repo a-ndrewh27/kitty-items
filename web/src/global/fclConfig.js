@@ -2,7 +2,7 @@ import {config} from "@onflow/fcl"
 import publicConfig from "src/global/publicConfig"
 
 config()
-  .put("app.detail.title", "Kitty Items")
+  .put("app.detail.title", publicConfig.appTitle)
   .put(
     "app.detail.icon",
     `${new URL(publicConfig.appUrl).origin}/images/kitty-items-logo.svg`

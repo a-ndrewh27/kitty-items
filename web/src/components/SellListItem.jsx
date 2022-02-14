@@ -27,10 +27,10 @@ export default function SellListItem({item}) {
         Please specify the price you want to sell your Kitty Item for.
       </div>
 
-      <div className="bg-white border border-gray-200 rounded px-8 pt-5 pb-7">
-        {isSellLoading && sellTxStatus !== null ? (
-          <TransactionLoading status={sellTxStatus} />
-        ) : (
+      {isSellLoading && sellTxStatus !== null ? (
+        <TransactionLoading status={sellTxStatus} />
+      ) : (
+        <div className="bg-white border border-gray-200 rounded px-8 pt-5 pb-7">
           <form onSubmit={onSubmit}>
             <TextInput
               value={price}
@@ -52,8 +52,8 @@ export default function SellListItem({item}) {
               List My Kitty Kitem
             </Button>
           </form>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   )
 }
